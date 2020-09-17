@@ -2,7 +2,7 @@ package com.android.dummyapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.android.discover.InFocus
+import com.android.infocus.InFocus
 
 class MainActivity : AppCompatActivity() {
 

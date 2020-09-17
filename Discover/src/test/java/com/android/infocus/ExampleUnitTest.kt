@@ -1,4 +1,4 @@
-package com.android.discover
+package com.android.infocus
 
 import org.junit.Test
 

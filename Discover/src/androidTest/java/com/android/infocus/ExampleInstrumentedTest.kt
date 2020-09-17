@@ -1,4 +1,4 @@
-package com.android.discover
+package com.android.infocus
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
