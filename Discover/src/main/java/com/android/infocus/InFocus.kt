@@ -7,9 +7,14 @@ import androidx.fragment.app.DialogFragment
 
 class InFocus : DialogFragment() {
 
+    private val backgroundColorResource: Int = android.R.color.transparent
+
     companion object {
+
         @JvmStatic
-        fun newInstance(): InFocus = this.newInstance()
+        fun newInstance(): InFocus {
+            return InFocus()
+        }
     }
 
     override fun onCreateView(
@@ -24,12 +29,18 @@ class InFocus : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        makeFullScreen()
+
+    }
+
+    private fun makeFullScreen() {
         val window = dialog?.window ?: return
+        window.setBackgroundDrawableResource(backgroundColorResource)
         window.decorView.setPadding(0, 0, 0, 0)
         with(window.attributes) {
             gravity = Gravity.BOTTOM
             width = WindowManager.LayoutParams.MATCH_PARENT
-            height = WindowManager.LayoutParams.WRAP_CONTENT
+            height = WindowManager.LayoutParams.MATCH_PARENT
         }
     }
 

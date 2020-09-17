@@ -10,7 +10,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var infocus = InFocus()
+        var infocus = InFocus.newInstance()
         infocus.launch(this)
+
     }
 }
