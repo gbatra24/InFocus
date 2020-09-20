@@ -1,2 +1,2 @@
-include ':app', ':Discover'
+include ':app', ':InFocus'
 rootProject.name='DummyApp'
