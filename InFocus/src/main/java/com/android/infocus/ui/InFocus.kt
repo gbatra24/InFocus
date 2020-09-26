@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.infocus.R
@@ -13,14 +14,11 @@ import com.android.infocus.databinding.InfocusHomeBinding
 
 class InFocus : DialogFragment() {
 
+    private lateinit var binding : InfocusHomeBinding
     private val backgroundColorResource: Int = android.R.color.transparent
     private var itemTitleColor: Int? = null
     private var itemContentColor: Int? = null
     private var iconColor: Int? = null
-
-    private val binding by lazy(LazyThreadSafetyMode.NONE) {
-        InfocusHomeBinding.inflate(layoutInflater)
-    }
 
     val mItems: ArrayList<ItemUpdates> by lazy {
         requireArguments().getParcelableArrayList<ItemUpdates>(ARGUMENT) as ArrayList<ItemUpdates>
@@ -52,8 +50,8 @@ class InFocus : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var view: View = inflater.inflate(R.layout.infocus_home, container, false)
-        return view
+        binding = DataBindingUtil.inflate(inflater, R.layout.infocus_home, container, false)
+        return binding.getRoot()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
